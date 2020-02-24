@@ -4,11 +4,12 @@ import org.springframework.data.cassandra.core.cql.PrimaryKeyType
 import org.springframework.data.cassandra.core.mapping.Column
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn
 import org.springframework.data.cassandra.core.mapping.Table
+import java.util.*
 
 @Table("hospedaje")
 class Hospedaje {
     @Column
-    lateinit var id: String
+    lateinit var id: UUID
     @PrimaryKeyColumn(type = PrimaryKeyType.PARTITIONED, name = "id_ciudad")
     lateinit var idCiudad: String
     @Column
